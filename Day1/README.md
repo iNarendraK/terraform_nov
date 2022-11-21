@@ -71,7 +71,7 @@ tree .terraform
 
 Expected output
 <pre>
-jegan@tektutor.org:~/terraform-nov-2022/Day1/lab1$ ls -lha
+jegan@tektutor.org:~/terraform-nov-2022/Day1/lab1$ <b>ls -lha</b>
 total 20K
 drwxrwxr-x 3 jegan docker 4.0K Nov 21 01:08 .
 drwxrwxr-x 3 jegan docker 4.0K Nov 21 00:55 ..
@@ -79,7 +79,7 @@ drwxrwxr-x 3 jegan docker 4.0K Nov 21 00:55 ..
 drwxr-xr-x 3 jegan docker 4.0K Nov 21 01:08 .terraform
 -rw-r--r-- 1 jegan docker 1.4K Nov 21 01:08 .terraform.lock.hcl
 
-jegan@tektutor.org:~/terraform-nov-2022/Day1/lab1$ tree .terraform
+jegan@tektutor.org:~/terraform-nov-2022/Day1/lab1$ <b>tree .terraform</b>
 .terraform
 └── providers
     └── registry.terraform.io
@@ -196,7 +196,7 @@ Do you want to perform these actions?
   Terraform will perform the actions described above.
   Only 'yes' will be accepted to approve.
 
-  Enter a value: yes
+  Enter a value: <b>yes</b>
 
 docker_image.nginx: Creating...
 docker_image.nginx: Still creating... [10s elapsed]
