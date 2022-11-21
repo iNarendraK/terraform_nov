@@ -372,7 +372,7 @@ docker_container.nginx: Creation complete after 1s [id=25b39ec8fc030cea97a537d1b
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 </pre>
 
-## Destroying all resources created by your Terraform Project
+## ⛹️‍♂️ Lab - Destroying all resources created by your Terraform Project
 ```
 cd ~/terraform-nov-2022
 git pull
