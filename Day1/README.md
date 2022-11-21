@@ -371,3 +371,131 @@ docker_container.nginx: Creation complete after 1s [id=25b39ec8fc030cea97a537d1b
 
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 </pre>
+
+## Destroying all resources created by your Terraform Project
+```
+cd ~/terraform-nov-2022
+git pull
+cd Day1/lab1
+terraform destroy
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/terraform-nov-2022/Day1/lab1$ <b>terraform destroy</b>
+docker_image.nginx: Refreshing state... [id=sha256:2f8cd4fa21bb2ca1b1a88a7674f85253ff1676e25cf645465ef5314bcd118b33bitnami/nginx:latest]
+docker_container.nginx: Refreshing state... [id=25b39ec8fc030cea97a537d1b938de8ea996d9e6b29b1acbb5b2d880e2de128b]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with
+the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # docker_container.nginx will be destroyed
+  - resource "docker_container" "nginx" {
+      - attach                                      = false -> null
+      - command                                     = [
+          - "/opt/bitnami/scripts/nginx/run.sh",
+        ] -> null
+      - container_read_refresh_timeout_milliseconds = 15000 -> null
+      - cpu_shares                                  = 0 -> null
+      - dns                                         = [] -> null
+      - dns_opts                                    = [] -> null
+      - dns_search                                  = [] -> null
+      - entrypoint                                  = [
+          - "/opt/bitnami/scripts/nginx/entrypoint.sh",
+        ] -> null
+      - env                                         = [] -> null
+      - gateway                                     = "172.17.0.1" -> null
+      - group_add                                   = [] -> null
+      - hostname                                    = "25b39ec8fc03" -> null
+      - id                                          = "25b39ec8fc030cea97a537d1b938de8ea996d9e6b29b1acbb5b2d880e2de128b" -> null
+      - image                                       = "sha256:2f8cd4fa21bb2ca1b1a88a7674f85253ff1676e25cf645465ef5314bcd118b33" -> null
+      - init                                        = false -> null
+      - ip_address                                  = "172.17.0.2" -> null
+      - ip_prefix_length                            = 16 -> null
+      - ipc_mode                                    = "private" -> null
+      - links                                       = [] -> null
+      - log_driver                                  = "json-file" -> null
+      - log_opts                                    = {} -> null
+      - logs                                        = false -> null
+      - max_retry_count                             = 0 -> null
+      - memory                                      = 0 -> null
+      - memory_swap                                 = 0 -> null
+      - must_run                                    = true -> null
+      - name                                        = "my-nginx" -> null
+      - network_data                                = [
+          - {
+              - gateway                   = "172.17.0.1"
+              - global_ipv6_address       = ""
+              - global_ipv6_prefix_length = 0
+              - ip_address                = "172.17.0.2"
+              - ip_prefix_length          = 16
+              - ipv6_gateway              = ""
+              - network_name              = "bridge"
+            },
+        ] -> null
+      - network_mode                                = "default" -> null
+      - privileged                                  = false -> null
+      - publish_all_ports                           = false -> null
+      - read_only                                   = false -> null
+      - remove_volumes                              = true -> null
+      - restart                                     = "no" -> null
+      - rm                                          = false -> null
+      - runtime                                     = "runc" -> null
+      - security_opts                               = [] -> null
+      - shm_size                                    = 64 -> null
+      - start                                       = true -> null
+      - stdin_open                                  = false -> null
+      - stop_timeout                                = 0 -> null
+      - storage_opts                                = {} -> null
+      - sysctls                                     = {} -> null
+      - tmpfs                                       = {} -> null
+      - tty                                         = false -> null
+      - user                                        = "1001" -> null
+      - wait                                        = false -> null
+      - wait_timeout                                = 60 -> null
+      - working_dir                                 = "/app" -> null
+
+      - ports {
+          - external = 9000 -> null
+          - internal = 8080 -> null
+          - ip       = "0.0.0.0" -> null
+          - protocol = "tcp" -> null
+        }
+    }
+
+  # docker_image.nginx will be destroyed
+  - resource "docker_image" "nginx" {
+      - id           = "sha256:2f8cd4fa21bb2ca1b1a88a7674f85253ff1676e25cf645465ef5314bcd118b33bitnami/nginx:latest" -> null
+      - image_id     = "sha256:2f8cd4fa21bb2ca1b1a88a7674f85253ff1676e25cf645465ef5314bcd118b33" -> null
+      - keep_locally = false -> null
+      - latest       = "sha256:2f8cd4fa21bb2ca1b1a88a7674f85253ff1676e25cf645465ef5314bcd118b33" -> null
+      - name         = "bitnami/nginx:latest" -> null
+      - repo_digest  = "bitnami/nginx@sha256:a13a99b81152f5274c8fdcd621d47f441b230ea4dea45acd48f23877949230de" -> null
+    }
+
+Plan: 0 to add, 0 to change, 2 to destroy.
+╷
+│ Warning: Deprecated attribute
+│ 
+│   on main.tf line 18, in resource "docker_container" "nginx":
+│   18:   image = docker_image.nginx.latest
+│ 
+│ The attribute "latest" is deprecated. Refer to the provider documentation for details.
+╵
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: <b>yes</b>
+
+docker_container.nginx: Destroying... [id=25b39ec8fc030cea97a537d1b938de8ea996d9e6b29b1acbb5b2d880e2de128b]
+docker_container.nginx: Destruction complete after 1s
+docker_image.nginx: Destroying... [id=sha256:2f8cd4fa21bb2ca1b1a88a7674f85253ff1676e25cf645465ef5314bcd118b33bitnami/nginx:latest]
+docker_image.nginx: Destruction complete after 0s
+
+Destroy complete! Resources: 2 destroyed.
+</pre>
