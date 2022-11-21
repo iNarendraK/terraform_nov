@@ -1,24 +1,5 @@
 # Day 1 
 
-## What is Terraform Module?
-- is a set of Terraform configuration files in a single directory
-- you may have just a single .tf file or multiple .tf files
-- if you run Terraform commands directly from such a directory, it is considered the root module
-
-## What is a Child Module?
- - Terraform commands will only directly use the configuration files in one directory, which is usually the current working directory. 
- - However, your configuration can call modules in other directories. When Terraform encounters a module block, it loads and processes that module's configuration files.
-- A module that is called by another configuration is referred to as a "child module" of that configuration.
-
-## Local vs Remote Module
-- Modules can either be loaded from the local filesystem, or a remote source. 
-- Terraform supports a variety of remote sources, 
-  - Terraform Registry, 
-  - Version control systems
-  - HTTP URLs
-  - Terraform Cloud 
-  - Terraform Enterprise private module registries
-
 ## In case you haven't already cloned this repository
 ```
 cd ~
@@ -659,22 +640,6 @@ Legal docs and information: aka.ms/AzureCliLegal
 Your CLI is up-to-date.
 </pre>
 
-
-## Activating your azure pass
-First you login to your azure account that you created.  Next, you open a new tab and navigate to the below URL.
-
-```
-microsoftazurepass.com/SubmitPromoCode
-```
-Make sure the Microsoft email matches the email with which you created your new Azure account.
-
-In the promocode, paste/type your Azure pass that I shared today. Type the characters it shows on the page and click on Submit button.
-
-## You can check your azure pass credit here
-<pre>
-https://www.microsoftazuresponsorships.com/Balance
-</pre>
-
 ### Login to azure portal using azure cli
 ```
 az login
@@ -700,4 +665,100 @@ A web browser has been opened at https://login.microsoftonline.com/organizations
     }
   }
 ]
+</pre>
+
+## What is Terraform Module?
+- is a set of Terraform configuration files in a single directory
+- you may have just a single .tf file or multiple .tf files
+- if you run Terraform commands directly from such a directory, it is considered the root module
+
+## What is a Child Module?
+ - Terraform commands will only directly use the configuration files in one directory, which is usually the current working directory. 
+ - However, your configuration can call modules in other directories. When Terraform encounters a module block, it loads and processes that module's configuration files.
+- A module that is called by another configuration is referred to as a "child module" of that configuration.
+
+## Local vs Remote Module
+- Modules can either be loaded from the local filesystem, or a remote source. 
+- Terraform supports a variety of remote sources, 
+  - Terraform Registry, 
+  - Version control systems
+  - HTTP URLs
+  - Terraform Cloud 
+  - Terraform Enterprise private module registries
+
+## Lab - Terraform Login
+Create a file name 'main.tf' with the below content
+<pre>
+terraform {
+  required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = "=3.0.0"
+    }
+  }
+}
+
+provider "azurerm" {
+  features {}
+  subscription_id = "your-azure-subscription-id"
+  tenant_id = "your-azure-tenantid"
+}
+</pre>
+
+You may now try to login to Azure portal using Terraform
+<pre>
+terraform init
+terraform apply
+</pre>
+
+
+## Lab - Let's create a Azure Resource Group using Terraform 
+```
+terraform {
+  required_providers {
+    azurerm = { 
+      source = "hashicorp/azurerm"
+      version = "=3.0.0"
+    }   
+  }
+}
+
+provider "azurerm" {
+  features {}
+}
+
+resource "azurerm_resource_group" "tektutor_rg" {
+    name = "tektutor_rg"
+    location = "West Europe"
+}
+```
+
+Now let's try creating the resource group
+```
+terraform init
+terraform apply  --auto-approve
+```
+
+Expected output
+<pre>
+(jegan@tektutor.org)$ terraform apply --auto-approve
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are
+indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # azurerm_resource_group.tektutor_rg will be created
+  + resource "azurerm_resource_group" "tektutor_rg" {
+      + id       = (known after apply)
+      + location = "westeurope"
+      + name     = "tektutor_rg"
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+azurerm_resource_group.tektutor_rg: Creating...
+azurerm_resource_group.tektutor_rg: Creation complete after 3s [id=/subscriptions/c817e174-6d44-43b3-af91-c8e6cbd6719a/resourceGroups/tektutor_rg]
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 </pre>
