@@ -194,3 +194,37 @@ docker pull nginx:latest
 ```
 docker images
 ```
+
+## What is datacenter?
+- a group of servers owned an organization which are co-located in a single physical location
+- Mumbai (Region)
+  - Availability Zone ( 2 locations )
+  - 
+- Bengaluru (Region)
+  - Whitefield ( Availability Zone )
+  - Electronic City ( Availability Zone )
+
+## What is Cloud Computing?
+
+## Different types of Cloud
+1. Public Cloud
+  - Amazon AWS, Microsoft Azure, Google GCP, Digital Ocean, etc.,
+  - We can provision infrastructure, storage and network services from AWS
+  - We can provision and use a Virtual Machine on the cloud
+  
+2. Private Cloud
+- smartly connect all the datacenter servers in a way they can be access from internet, and you can create virtual machine of different size and capacity ( you can choose no of CPU cores, RAM size, Storage size, even you can resize them after creating the virtual machines )
+
+3. Hybrid Cloud
+- a combination of Private Data center and Public Datacenter
+
+
+## What are different types of cloud services ?
+1. Infrastructure as a Service (IaaS)
+2. Platform as a Service (PaaS)
+3. Software as a Service (SaaS)
+
+
+## What is Terraform ?
+
+## What is Cloudformation ?
