@@ -6,7 +6,7 @@ cd ~
 git clone https://github.com/tektutor/terraform-nov-2022.git
 ```
 
-## Your first Terraform Script
+## ⛹️‍♂️ Lab - Your first Terraform Script
 ```
 cd ~
 cd terraform-nov-2022/Day1/lab1
