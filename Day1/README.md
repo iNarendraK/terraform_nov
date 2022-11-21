@@ -500,7 +500,7 @@ docker_image.nginx: Destruction complete after 0s
 Destroy complete! Resources: 2 destroyed.
 </pre>
 
-## Lab - Using auto-approve
+## ⛹️‍♂️ Lab - Using auto-approve
 ```
 cd ~/terraform-nov-2022
 git pull
