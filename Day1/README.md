@@ -659,6 +659,12 @@ Legal docs and information: aka.ms/AzureCliLegal
 Your CLI is up-to-date.
 </pre>
 
+
+## Activating your azure pass
+```
+microsoftazurepass.com/SubmitPromoCode
+```
+
 ### Login to azure portal using azure cli
 ```
 az login
