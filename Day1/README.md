@@ -1,5 +1,24 @@
 # Day 1 
 
+## What is Terraform Module?
+- is a set of Terraform configuration files in a single directory
+- you may have just a single .tf file or multiple .tf files
+- if you run Terraform commands directly from such a directory, it is considered the root module
+
+## What is a Child Module?
+ - Terraform commands will only directly use the configuration files in one directory, which is usually the current working directory. 
+ - However, your configuration can call modules in other directories. When Terraform encounters a module block, it loads and processes that module's configuration files.
+- A module that is called by another configuration is referred to as a "child module" of that configuration.
+
+## Local vs Remote Module
+- Modules can either be loaded from the local filesystem, or a remote source. 
+- Terraform supports a variety of remote sources, 
+  - Terraform Registry, 
+  - Version control systems
+  - HTTP URLs
+  - Terraform Cloud 
+  - Terraform Enterprise private module registries
+
 ## In case you haven't already cloned this repository
 ```
 cd ~
@@ -666,22 +685,3 @@ A web browser has been opened at https://login.microsoftonline.com/organizations
   }
 ]
 </pre>
-
-## What is Terraform Module?
-- is a set of Terraform configuration files in a single directory
-- you may have just a single .tf file or multiple .tf files
-- if you run Terraform commands directly from such a directory, it is considered the root module
-
-## What is a Child Module?
- - Terraform commands will only directly use the configuration files in one directory, which is usually the current working directory. 
- - However, your configuration can call modules in other directories. When Terraform encounters a module block, it loads and processes that module's configuration files.
-- A module that is called by another configuration is referred to as a "child module" of that configuration.
-
-## Local vs Remote Module
-- Modules can either be loaded from the local filesystem, or a remote source. 
-- Terraform supports a variety of remote sources, 
-  - Terraform Registry, 
-  - Version control systems
-  - HTTP URLs
-  - Terraform Cloud 
-  - Terraform Enterprise private module registries
