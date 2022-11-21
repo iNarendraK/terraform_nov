@@ -87,3 +87,20 @@ git clone https://github.com/tektutor/terraform-nov-2022.git
 cd terraform-nov-2022
 code .
 ```
+
+## What is Dual/Multi-booting?
+- Let's say you have a laptop with Windows 10 Pro preinstalled, but you need Ubuntu for some R&D purpose.
+- You can use some Boot Loaders ( LILO or GRUB 2 )
+- Boot loader is a small system utility that is installed on the MBR(Mast Boot Record) i.e sector 0 byte in your Hard Disk ( 512 bytes )
+
+## Virtualization Technology
+- Helps us run many OS side by side on the same system
+- i.e Many OS can be actively running on the laptop/desktop/workstation/server
+- Primary Operating System on which the Hypervisor software is installed is called Host OS
+- The Operating System that runs within the Virtual Machine are referred as Guest OS.
+- The number of OS ( Host & Guest OS ) that can be active at the same time depends on the hardware configuration of your laptop/server.
+- Processor ( Intel / AMD )
+  - multiple CPU Cores
+- RAM
+- Storage
+- Virtualization technology helps us in consolidating many physical servers to a single Physical Server
