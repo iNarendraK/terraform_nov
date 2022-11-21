@@ -125,6 +125,31 @@ code .
 - every container also get's a file system
 - containers don't get their own dedicated hardware resources, they share the hardware resources available on the underlying OS where the containers runs, hence it is a lightweight virtualization technology
 
+## Container Softwares
+- Docker
+- Podman
+- Rkt ( pronounced as Rocket )
+- LXC
+- Containerd
+- CRI-O
+
+## What is a Container Runtime ?
+- is a low-level container management tool used by Container Engines
+- generally end-users never this directly
+- Examples
+  - runC 
+  - CRI-O
+
+## What is a container Engine ?
+- a high-level software used by end-users like us to create/manage container and images
+- container engine provides user-friendly commands to create and manage containers/images
+- container engines depends on container runtime to create and manage containers
+- Examples
+  - Docker
+  - Podman
+- Docker depends on containerd which in-turn depends on runC Container Runtimes
+- Podman depends on CRI-O container Runtime
+
 ## Installing Docker in Ubuntu
 ```
 sudo apt-get update
