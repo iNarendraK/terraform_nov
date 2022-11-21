@@ -268,4 +268,15 @@ docker images
 - Examples
   - Docker SWARM
   - Google Kubernetes
+    - support CLI
+    - supports Kubernetes minimal webconsole Dashboard, but generally not used in production
+    - open source production which is production grade but no support ( only community support you will get )
   - Red Hat OpenShift
+    - Red Hat's distribution of Kubernetes
+    - Red Hat Openshift developed on top of Kubernetes with many additional features
+    - Additional Features added on-top of Kubernetes
+      - Web console (GUI)
+      - User Management
+      - Supports CI/CD 
+      - comes with private Image registry out of the box
+      - enterprise product which comes with RedHat support
