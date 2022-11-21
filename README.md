@@ -123,3 +123,4 @@ code .
 - every container get its own Network Stack
 - every container get's an IP Address
 - every container also get's a file system
+- containers don't get their own dedicated hardware resources, they share the hardware resources available on the underlying OS where the containers runs, hence it is a lightweight virtualization technology
