@@ -233,3 +233,5 @@ jegan@tektutor.org:~/terraform-nov-2022/Day1/lab1$ <b>docker ps</b>
 CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                              NAMES
 9193357c9f4c   2f8cd4fa21bb   "/opt/bitnami/script…"   22 seconds ago   Up 21 seconds   8443/tcp, 0.0.0.0:9000->8080/tcp   my-nginx
 </pre>
+
+
