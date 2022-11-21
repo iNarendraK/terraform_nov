@@ -598,3 +598,90 @@ docker_container.nginx: Creation complete after 1s [id=5b47c83b2eb80cdc39ed58191
 
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 </pre>
+
+
+## Install azure-cli in Ubuntu (in RPS Machine)
+```
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+sudo apt-get update
+sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg
+AZ_REPO=$(lsb_release -cs)
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" |
+    sudo tee /etc/apt/sources.list.d/azure-cli.list
+sudo apt-get update
+sudo apt-get install azure-cli
+```
+
+### Checking if azure cli tool is installed properly
+```
+az --version
+```
+
+Expected Output
+<pre>
+<b>jegan@tektutor.org</b>:~/Terraform/Lab1$ <b>az --version</b>
+azure-cli                         2.41.0
+
+core                              2.41.0
+telemetry                          1.0.8
+
+Dependencies:
+msal                            1.20.0b1
+azure-mgmt-resource             21.1.0b1
+
+Python location '/opt/az/bin/python3'
+Extensions directory '/home/jeganathan/.azure/cliextensions'
+
+Python (Linux) 3.10.5 (main, Oct 10 2022, 03:02:37) [GCC 11.2.0]
+
+Legal docs and information: aka.ms/AzureCliLegal
+
+
+Your CLI is up-to-date.
+</pre>
+
+### Login to azure portal using azure cli
+```
+az login
+```
+
+Expected output
+<pre>
+<b>jegan@tektutor.org</b>:~/Terraform/Lab1$<b> az login</b>
+A web browser has been opened at https://login.microsoftonline.com/organizations/oauth2/v2.0/authorize. Please continue the login in the web browser. If no web browser is available or if the web browser fails to open, use device code flow with `az login --use-device-code`.
+[
+  {
+    "cloudName": "AzureCloud",
+    "homeTenantId": "12345678-1234-56ee-4a3c-cd150280z9c2",
+    "id": "x112e521-1d23-89c1-nt26-k5s71px5370d",
+    "isDefault": true,
+    "managedByTenants": [],
+    "name": "Free Trial",
+    "state": "Enabled",
+    "tenantId": "1234jl56-v789-01uw-2x3p-a456sfr789012",
+    "user": {
+      "name": "abc@xyz.com",
+      "type": "user"
+    }
+  }
+]
+</pre>
+
+## What is Terraform Module?
+- is a set of Terraform configuration files in a single directory
+- you may have just a single .tf file or multiple .tf files
+- if you run Terraform commands directly from such a directory, it is considered the root module
+
+## What is a Child Module?
+ - Terraform commands will only directly use the configuration files in one directory, which is usually the current working directory. 
+ - However, your configuration can call modules in other directories. When Terraform encounters a module block, it loads and processes that module's configuration files.
+- A module that is called by another configuration is referred to as a "child module" of that configuration.
+
+## Local vs Remote Module
+- Modules can either be loaded from the local filesystem, or a remote source. 
+- Terraform supports a variety of remote sources, 
+  - Terraform Registry, 
+  - Version control systems
+  - HTTP URLs
+  - Terraform Cloud 
+  - Terraform Enterprise private module registries
