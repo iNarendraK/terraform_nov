@@ -171,3 +171,8 @@ newgrp docker
 docker --version
 docker images
 ```
+
+## Finding details about your docker installation
+```
+docker info
+```
