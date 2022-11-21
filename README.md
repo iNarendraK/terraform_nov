@@ -250,3 +250,22 @@ docker images
 - Cloudformation is a Infrastructure as a Code (Iaac) software from AWS
 - it helps us automate the infrastructure within AWS 
 
+## What is a Configuration Management Tool?
+- In case we need install software and configure on an already provisioned VM running locally or on cloude, we could use configuration management tools
+- Examples
+  - Ansible
+  - Chef
+  - Puppet
+  - Salt/SaltStack
+
+## What is an Container Orchestration Tool?
+- helps in managing containerized applications like microservices, db servers, web servers, app servers, etc.,
+- makes your application Highly Available(HA)
+- has inbuilt monitoring features
+- supports load-balancing, service discovery
+- supports scale up/down on demand
+- supports rolling update ie upgrading/downgrading an already live application from one version to another without downtime
+- Examples
+  - Docker SWARM
+  - Google Kubernetes
+  - Red Hat OpenShift
