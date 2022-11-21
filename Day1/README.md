@@ -670,6 +670,11 @@ Make sure the Microsoft email matches the email with which you created your new 
 
 In the promocode, paste/type your Azure pass that I shared today. Type the characters it shows on the page and click on Submit button.
 
+## You can check your azure pass credit here
+<pre>
+https://www.microsoftazuresponsorships.com/Balance
+</pre>
+
 ### Login to azure portal using azure cli
 ```
 az login
