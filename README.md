@@ -1,6 +1,6 @@
 # Day 1
 
-## Installing Terraform in Ubuntu
+## Installing Terraform in Ubuntu (Do this from your RPS Ubuntu Terminal )
 ```
 wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
 
