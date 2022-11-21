@@ -661,9 +661,14 @@ Your CLI is up-to-date.
 
 
 ## Activating your azure pass
+First you login to your azure account that you created.  Next, you open a new tab and navigate to the below URL.
+
 ```
 microsoftazurepass.com/SubmitPromoCode
 ```
+Make sure the Microsoft email matches the email with which you created your new Azure account.
+
+In the promocode, paste/type your Azure pass that I shared today. Type the characters it shows on the page and click on Submit button.
 
 ### Login to azure portal using azure cli
 ```
