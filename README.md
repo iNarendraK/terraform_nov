@@ -226,5 +226,13 @@ docker images
 
 
 ## What is Terraform ?
+- Infrastructure as a Code (IaaC) software
+- we can automate the infrastructure management
+- Example
+  - we can automate - provision virtual machine in onPrem servers, public cloude, etc.,
+  - we can automate - software installation on the provisioned virtual machines locally or on cloud
+- Terraform is cloud newtral IaaC software ie it can automate infrastruce on private, public or hybrid cloude independent of whether it is AWS/Azure/GCP, etc.,
 
 ## What is Cloudformation ?
+- Cloudformation is a Infrastructure as a Code (Iaac) software from AWS
+- it helps us automate the infrastructure within AWS 
