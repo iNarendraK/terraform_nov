@@ -104,3 +104,22 @@ code .
 - RAM
 - Storage
 - Virtualization technology helps us in consolidating many physical servers to a single Physical Server
+
+## What is Virtual Machine(VM)?
+- aka Guest OS
+- the Guest OS get its own dedicated hardware resources
+  - CPU Cores
+  - RAM
+  - Storage
+- it is fully functional Operating system with its own OS Kernel
+
+## What is container virtualization?
+- it is an application virtualization technology
+- each container represents one single application 
+- container doesn't represent Operating Systems
+- 1 container represents one process within an OS
+- container will not able to replace virtual machine
+- containers runs in its own virtual sandbox environment called namespace
+- every container get its own Network Stack
+- every container get's an IP Address
+- every container also get's a file system
