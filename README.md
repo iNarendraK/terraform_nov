@@ -232,7 +232,21 @@ docker images
   - we can automate - provision virtual machine in onPrem servers, public cloude, etc.,
   - we can automate - software installation on the provisioned virtual machines locally or on cloud
 - Terraform is cloud newtral IaaC software ie it can automate infrastruce on private, public or hybrid cloude independent of whether it is AWS/Azure/GCP, etc.,
+- Terraform can help setup bunch of Virtual Machines on Locally, AWS,Azure, etc.,
+- Terraform can also help in installing specific softwares and configure them locally, or cloud virtual machines using Ansible Playbooks
+
+
+## What are Terraform providers?
+- Terraform supports different types of Providers to automate infrastrucutre
+- Terraform Providers
+  - Docker
+  - AWS
+  - Azure
+  - GCP
+  - RedHat OpenShift
+  - Kubernetes
 
 ## What is Cloudformation ?
 - Cloudformation is a Infrastructure as a Code (Iaac) software from AWS
 - it helps us automate the infrastructure within AWS 
+
