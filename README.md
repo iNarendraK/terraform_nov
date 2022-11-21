@@ -125,6 +125,14 @@ code .
 - every container also get's a file system
 - containers don't get their own dedicated hardware resources, they share the hardware resources available on the underlying OS where the containers runs, hence it is a lightweight virtualization technology
 
+## Linux Kernel Features that enable Container Technology
+1. Namespace
+   - helps in isolating one container from another
+2. Control Group (CGroup)
+   - helps in applying some resource quoto restrictions
+   - example:-
+     - a container can restricted to access only 50% CPU ( let's your laptop has Quad Physical Cores ie 8 Virtual Cores )
+
 ## Container Softwares
 - Docker
 - Podman
@@ -175,4 +183,14 @@ docker images
 ## Finding details about your docker installation
 ```
 docker info
+```
+
+## Downloading a container image from Docker Remote Registry ( Docker Hub website to your Local Docker Registry[/var/lib/docker]
+```
+docker pull nginx:latest
+```
+
+## Listing the docker images on your Local Docker Registry
+```
+docker images
 ```
