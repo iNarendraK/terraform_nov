@@ -235,7 +235,7 @@ CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS  
 </pre>
 
 
-## Lab - Creating a plan before applying changes
+## ⛹️‍♂️ Lab - Creating a plan before applying changes
 ```
 cd ~/terraform-nov-2022
 git pull
@@ -345,14 +345,14 @@ To perform exactly these actions, run the following command to apply:
 </pre>
 
 
-## Lab - Executing the plan
+## ⛹️‍♂️ Lab - Executing the plan
 ```
 terraform plan --out main.tfplan
 ```
 
 Expected output
 <pre>
-jegan@tektutor.org:~/terraform-nov-2022/Day1/lab1$ terraform apply main.tfplan 
+jegan@tektutor.org:~/terraform-nov-2022/Day1/lab1$ <b>terraform apply main.tfplan</b>
 docker_image.nginx: Creating...
 docker_image.nginx: Still creating... [10s elapsed]
 docker_image.nginx: Creation complete after 11s [id=sha256:2f8cd4fa21bb2ca1b1a88a7674f85253ff1676e25cf645465ef5314bcd118b33bitnami/nginx:latest]
