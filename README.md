@@ -62,7 +62,28 @@ Global options (use these before the subcommand, if any):
   -version      An alias for the "version" subcommand.
 </pre>
 
+
 ## Install Microsoft Visual Studio code editor
 ```
 sudo snap install code --classic
+```
+
+Launching the visual studio code editor from your Ubuntu terminal
+```
+cd ~
+
+code .
+```
+
+## Installing git, tree and vim
+```
+sudo apt update && sudo apt install -y git tree vim
+```
+
+## Cloning TekTutor GitHub Repository for this training
+```
+cd ~
+git clone https://github.com/tektutor/terraform-nov-2022.git
+cd terraform-nov-2022
+code .
 ```
