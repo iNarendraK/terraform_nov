@@ -45,7 +45,8 @@
 2. Control Group (CGroup)
    - helps in applying some resource quoto restrictions
    - example:-
-     - a container can restricted to access only 50% CPU ( let's your laptop has Quad Physical Cores ie 8 Virtual Cores )
+     - a container can restricted to access only 50% CPU 
+     - lets say your laptop has Quad Physical Cores ie 8 Virtual Cores, 50% CPU is 4 virtual cores/2 Physical cores
 
 ## Container Softwares
 - Docker
@@ -57,7 +58,7 @@
 
 ## What is a Container Runtime ?
 - is a low-level container management tool used by Container Engines
-- generally end-users never this directly
+- generally end-users never use this directly
 - Examples
   - runC 
   - CRI-O
@@ -72,11 +73,8 @@
 - Docker depends on containerd which in-turn depends on runC Container Runtimes
 - Podman depends on CRI-O container Runtime
 
-
-
-
 ## What is datacenter?
-- a group of servers owned an organization which are co-located in a single physical location
+- a group of servers owned by an organization which are co-located in a single physical location
 - Mumbai (Region)
   - Availability Zone ( 2 locations )
   - 
@@ -85,6 +83,7 @@
   - Electronic City ( Availability Zone )
 
 ## What is Cloud Computing?
+Cloud computing is the on-demand delivery of IT resources over the Internet with pay-as-you-go pricing. Instead of buying, owning, and maintaining physical data centers and servers, you can access technology services, such as computing power, storage, and databases, on an as-needed basis from a cloud provider like Amazon Web Services (AWS) or Microsoft Azure.
 
 ## Different types of Cloud
 1. Public Cloud
@@ -93,17 +92,15 @@
   - We can provision and use a Virtual Machine on the cloud
   
 2. Private Cloud
-- smartly connect all the datacenter servers in a way they can be access from internet, and you can create virtual machine of different size and capacity ( you can choose no of CPU cores, RAM size, Storage size, even you can resize them after creating the virtual machines )
+- smartly connect all the datacenter servers in a way they can be accessed from internet, and you can create virtual machines of different size and capacity ( you can choose no of CPU cores, RAM size, Storage size, even you can resize them after creating the virtual machines )
 
 3. Hybrid Cloud
 - a combination of Private Data center and Public Datacenter
-
 
 ## What are different types of cloud services ?
 1. Infrastructure as a Service (IaaS)
 2. Platform as a Service (PaaS)
 3. Software as a Service (SaaS)
-
 
 ## What is Terraform ?
 - Infrastructure as a Code (IaaC) software
@@ -114,7 +111,6 @@
 - Terraform is cloud newtral IaaC software ie it can automate infrastruce on private, public or hybrid cloude independent of whether it is AWS/Azure/GCP, etc.,
 - Terraform can help setup bunch of Virtual Machines on Locally, AWS,Azure, etc.,
 - Terraform can also help in installing specific softwares and configure them locally, or cloud virtual machines using Ansible Playbooks
-
 
 ## What are Terraform providers?
 - Terraform supports different types of Providers to automate infrastrucutre
@@ -172,6 +168,40 @@
 - Azure Virtual Machines
 - Azure Container Apps
 - Azure RedHat OpenShift (ARO)
+
+## What is an Azure App Service?
+Azure App Service lets you create apps faster with a one-of-a kind cloud service to quickly and easily create enterprise-ready web and mobile apps for any platform or device and deploy them on a scalable and reliable cloud infrastructure.
+
+## What is an Azure Spring App Service?
+Azure Spring Apps is a fully managed service for Spring developers. Manage the lifecycle of your Spring Boot applications with comprehensive monitoring and diagnostics, configuration management, service discovery, CI/CD integration, and blue-green deployments.
+
+## What is an Azure Container Instance?
+Develop apps fast without managing virtual machines or having to learn new tools—it's just your application, in a container, running in the cloud.
+
+## What is an Azure kubernetes Service?
+Azure Kubernetes Service (AKS) offers the quickest way to start developing and deploying cloud-native apps in Azure, datacenters, or at the edge with built-in code-to-cloud pipelines and guardrails. Get unified management and governance for on-premises, edge, and multicloud Kubernetes clusters. Interoperate with Azure security, identity, cost management, and migration services.
+
+## Azure Batch
+Cloud-scale job scheduling and compute management
+
+## Azure Function
+Develop more efficiently with an event-driven, serverless compute platform that helps solve complex orchestration problems. The Azure Functions end-to-end development experience enables you to use languages you’re already familiar with. Build and debug locally without additional setup, deploy and operate at scale in the cloud, and integrate services using triggers and bindings.
+
+## Azure Service Fabric
+Build and operate always-on, scalable, distributed apps
+
+- Simplify microservices development and application lifecycle management
+- Reliably scale and orchestrate containers and microservices
+- Data-aware platform for low-latency, high-throughput workloads with stateful containers or microservices
+- Run anything – your choice of languages and programming models
+- Run anywhere – supports Windows/Linux in Azure, on-premises, or other clouds
+- Scales up to thousands of machines
+
+## Azure Container Apps
+Deploy containerized apps without managing complex infrastructure. Write code using your preferred programming language or framework, and build microservices with full support for Distributed Application Runtime (Dapr). Scale dynamically based on HTTP traffic or events powered by Kubernetes Event-Driven Autoscaling (KEDA).
+
+## Azure Red Hat OpenShift Service
+Azure Red Hat OpenShift provides highly available, fully managed OpenShift clusters on demand, monitored and operated jointly by Microsoft and Red Hat. Kubernetes is at the core of Red Hat OpenShift. OpenShift brings added-value features to complement Kubernetes, making it a turnkey container platform as a service (PaaS) with a significantly improved developer and operator experience.
 
 ## In case you haven't already cloned this repository
 ```
