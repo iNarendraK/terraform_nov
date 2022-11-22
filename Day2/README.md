@@ -13,3 +13,7 @@ sudo apt install -y nginx
 sudo systemctl start nginx
 curl localhost
 ```
+
+## Firewall configuration
+
+![Network Security Group](nsg.png)
