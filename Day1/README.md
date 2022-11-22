@@ -241,6 +241,11 @@ Deploy containerized apps without managing complex infrastructure. Write code us
 ## Azure Red Hat OpenShift Service
 Azure Red Hat OpenShift provides highly available, fully managed OpenShift clusters on demand, monitored and operated jointly by Microsoft and Red Hat. Kubernetes is at the core of Red Hat OpenShift. OpenShift brings added-value features to complement Kubernetes, making it a turnkey container platform as a service (PaaS) with a significantly improved developer and operator experience.
 
+## Activating your azure pass
+<pre>
+https://microsoftazurepass.com/SubmitPromocode
+</pre>
+
 ## In case you haven't already cloned this repository
 ```
 cd ~
