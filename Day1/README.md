@@ -179,6 +179,51 @@ cd ~
 git clone https://github.com/tektutor/terraform-nov-2022.git
 ```
 
+## ⛹️‍♂️ Lab - Finding details about your docker installation
+```
+docker info
+```
+
+## ⛹️‍♂️ Lab - Downloading a container image from Docker Remote Registry ( Docker Hub website to your Local Docker Registry[/var/lib/docker]
+```
+docker pull nginx:latest
+```
+
+## ⛹️‍♂️ Lab - Listing the docker images on your Local Docker Registry
+```
+docker images
+```
+
+##  ⛹️‍♂️ Lab - Deleting image from Local Docker Registry
+```
+docker rmi nginx:latest
+```
+
+##  ⛹️‍♂️ Lab - Creating a container using nginx docker image
+```
+docker run -d --name nginx1 --hostname nginx1 nginx:latest
+```
+
+Listing the running containers
+```
+docker ps
+```
+
+Finding the IP address of nginx1 container
+```
+docker inspect nginx1 | grep IPA
+```
+
+Accessing the web page from nginx web server container
+```
+curl http://172.17.0.2:80
+```
+
+Deleting the nginx1 container
+```
+docker rm -f nginx1
+```
+
 ## ⛹️‍♂️ Lab - Your first Terraform Script
 ```
 cd ~
