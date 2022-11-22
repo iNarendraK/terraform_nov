@@ -288,5 +288,47 @@ ssh_key = <sensitive>
 tls_private_key = <sensitive>
 </pre>
 
-
 ### Printing the ssh_key
+```
+cd ~/terraform-nov-2022
+git pull
+cd Day2/azure-vm
+
+terraform output ssh_key > key.pem
+chmod 400 ./key.pem 
+ssh -i ./key.pem azureuser@172.173.248.67
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/terraform-nov-2022/Day2/azure-vm$ terraform output ssh_key > key.pem
+jegan@tektutor.org:~/terraform-nov-2022/Day2/azure-vm$ chmod 400 ./key.pem 
+jegan@tektutor.org:~/terraform-nov-2022/Day2/azure-vm$ ssh -i ./key.pem azureuser@172.173.248.67
+Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 5.4.0-1094-azure x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Nov 22 09:54:42 UTC 2022
+
+  System load:  0.01              Processes:           113
+  Usage of /:   4.8% of 28.89GB   Users logged in:     0
+  Memory usage: 5%                IP address for eth0: 10.0.1.4
+  Swap usage:   0%
+
+
+0 updates can be applied immediately.
+
+New release '20.04.5 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Tue Nov 22 09:52:25 2022 from 220.158.159.224
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+azureuser@myvm:~$ exit
+logout
+Connection to 172.173.248.67 closed.
+</pre>
