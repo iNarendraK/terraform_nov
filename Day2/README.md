@@ -27,7 +27,10 @@ git pull
 cd Day2/azure-vm
 terraform init
 terraform apply --auto-approve
-```jegan@tektutor.org:~/terraform-nov-2022/Day2/azure-vm$ terraform init
+```
+
+<pre>
+jegan@tektutor.org:~/terraform-nov-2022/Day2/azure-vm$ terraform init
 
 Initializing the backend...
 
