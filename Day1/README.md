@@ -123,6 +123,12 @@ Cloud computing is the on-demand delivery of IT resources over the Internet with
 - DNS servers maintains a look-up table i.e. your machine hostname with respective renewed IP address 
 - your DNS server helps other machines in your network to find your machine by its hostname
 
+## What is a Virtual Network ?
+An Azure Virtual Network (VNet) is a representation of your own network in the cloud. It is a logical isolation of the Azure cloud dedicated to your subscription.
+
+## What is a Subnet?
+A subnet is a range of IP addresses in the virtual network. You can divide a virtual network into multiple subnets for organization and security.
+
 ## What is Lift and Shift Migration?
 Lift and shift is an approach for migrating your apps to the cloud. It means moving an application and its associated data to a cloud platform—without redesigning the app.
 
