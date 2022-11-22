@@ -34,7 +34,7 @@ resource "azurerm_network_security_group" "my-nsg" {
   resource_group_name = azurerm_resource_group.rg.name
 
   security_rule {
-    name = "SSH"    
+    name = "AllowSSH"    
     priority = "1001"
     direction = "Inbound"
     access = "Allow"
@@ -44,6 +44,29 @@ resource "azurerm_network_security_group" "my-nsg" {
     source_address_prefix = "*"
     destination_address_prefix = "*"
   }
+  security_rule {
+    name = "EnableICMP"    
+    priority = "1002"
+    direction = "Inbound"
+    access = "Allow"
+    protocol = "Icmp"
+    source_port_range = "*"
+    destination_port_range = "*"
+    source_address_prefix = "*"
+    destination_address_prefix = "*"
+  }
+  security_rule {
+    name = "AllowHttp"    
+    priority = "1003"
+    direction = "Inbound"
+    access = "Allow"
+    protocol = "Tcp"
+    source_port_range = "*"
+    destination_port_range = "80"
+    source_address_prefix = "*"
+    destination_address_prefix = "*"
+  }
+
 }
 
 resource "azurerm_network_interface" "my_nic" {
