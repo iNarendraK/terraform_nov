@@ -1,5 +1,17 @@
 # Day 1 
 
+## Azure Services
+- Azure App Services
+- Azure Spring Apps
+- Azure Container Service
+- Azure Kubernetes Service
+- Azure Batch
+- Azure Functions
+- Azure Service Fabric
+- Azure Virtual Machines
+- Azure Container Apps
+- Azure RedHat OpenShift (ARO)
+
 ## In case you haven't already cloned this repository
 ```
 cd ~
