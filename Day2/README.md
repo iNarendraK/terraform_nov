@@ -346,3 +346,20 @@ cd Day2/azure-multiple-vms
 terraform init
 terraform apply --auto-approve
 ```
+
+## Lab - Creating an availability set (3 Virtual Machines) and adding them behind a Load Balancer
+
+### Reference
+<pre>
+https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/lb
+</pre>
+
+```
+cd ~/terraform-nov-2022
+git pull
+
+cd Day2/load-balancer/
+
+terraform init
+terraform apply --auto-approve
+```
