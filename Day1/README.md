@@ -102,6 +102,38 @@ Cloud computing is the on-demand delivery of IT resources over the Internet with
 2. Platform as a Service (PaaS)
 3. Software as a Service (SaaS)
 
+## What is a Private IP?
+- each of the devices connected to your home network has a private IP that your router keeps track of for you. 
+- when you hit search on google.com on your laptop, it sends a request to your router, which pushes it out to the internet
+- when the response comes, your router knows to send it to your laptop and not your desktop
+
+## What is a PUblic IP?
+- public IP addresses differentiate the devices that are plugged into the public internet
+- each device that accesses the internet uses an unique IP address
+- A public IP address is sometimes called an Internet IP
+
+## What is a static IP?
+- A PC on the Internet that has a static IP address retains the IP address
+- even if you reboot the machine, the IP address won't change
+- generally such IP addresses are assigned for websites, load balancer, gateways, etc.,
+
+## What is a Dynamic IP?
+- Your network assigns a dynamic IP to your laptop/desktop/server when connected to a network
+- The IP address assigned to a PC can change over time or when rebooted
+- DNS servers maintains a look-up table i.e. your machine hostname with respective renewed IP address 
+- your DNS server helps other machines in your network to find your machine by its hostname
+
+## What is Lift and Shift Migration?
+Lift and shift is an approach for migrating your apps to the cloud. It means moving an application and its associated data to a cloud platform—without redesigning the app.
+
+There’s no one-size-fits-all transition for moving an application from your on-premises data center to the cloud. But there are acknowledged core migration paths; many consider lift and shift (AKA rehosting) one of them. It’s a way for companies to protect their investments in business workflow, logic, and data trapped in on-premises hardware.
+
+The lift-and-shift approach opens paths to IT modernization by moving to an open and more extensible architecture in the cloud. Companies consider lift and shift for solid business reasons, including reduced costs and improved performance and resiliency.
+
+## What is Cloud optimized/optimization?
+- is the process of correctly selecting and assigning the right resources to a workload or application. 
+- workload performance, compliance, and cost are correctly and continually balanced against the best-fit infrastructure in real time, efficiency is achieved
+
 ## What is Terraform ?
 - Infrastructure as a Code (IaaC) software
 - we can automate the infrastructure management
