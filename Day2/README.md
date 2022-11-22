@@ -332,3 +332,14 @@ azureuser@myvm:~$ exit
 logout
 Connection to 172.173.248.67 closed.
 </pre>
+
+
+## Lab - Creating multiple ubuntu VMS using Terraform count loop
+```
+cd ~/terraform-nov-2022
+git pull
+cd Day2/azure-multiple-vms
+
+terraform init
+terraform apply --auto-approve
+```
