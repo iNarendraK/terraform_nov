@@ -19,7 +19,7 @@ curl localhost
 ![Network Security Group](nsg.png)
 
 
-## Creating an Ubuntu Virtual Machine using Terraform
+## Lab - Creating an Ubuntu Virtual Machine using Terraform
 ```
 cd ~/terraform-nov-2022
 git pull
