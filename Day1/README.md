@@ -2,8 +2,10 @@
 
 ## What is Dual/Multi-booting?
 - Let's say you have a laptop with Windows 10 Pro preinstalled, but you need Ubuntu for some R&D purpose.
-- You can use some Boot Loaders ( LILO or GRUB 2 )
-- Boot loader is a small system utility that is installed on the MBR(Mast Boot Record) i.e sector 0 byte in your Hard Disk ( 512 bytes )
+- You can use opensource Boot Loaders like LILO or GRUB 2  or commercial BootCamp Assistant multi-boot Boot Loader.
+- Boot loader is a small system utility that is installed on the MBR(Mast Boot Record) i.e sector 0, byte 0 in your Hard Disk ( 512 bytes )
+- Boot Loader scans your Hard disk(s) and gives a list of OS it detected for you to choose the OS you wish to boot into
+- Only one OS can be active at any point in time, it is not possible to have many OS active at the same time
 
 ## Virtualization Technology
 - Helps us run many OS side by side on the same system
@@ -71,20 +73,7 @@
 - Podman depends on CRI-O container Runtime
 
 
-## Finding details about your docker installation
-```
-docker info
-```
 
-## Downloading a container image from Docker Remote Registry ( Docker Hub website to your Local Docker Registry[/var/lib/docker]
-```
-docker pull nginx:latest
-```
-
-## Listing the docker images on your Local Docker Registry
-```
-docker images
-```
 
 ## What is datacenter?
 - a group of servers owned an organization which are co-located in a single physical location
