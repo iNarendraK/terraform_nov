@@ -360,6 +360,6 @@ git pull
 
 cd Day2/load-balancer/
 
-terraform init
+terraform init -upgrade
 terraform apply --auto-approve
 ```
