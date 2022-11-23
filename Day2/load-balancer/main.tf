@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "rg" {
     location = var.resource_group_location
-    name = "tektutor-rg2" 
+    name = "tektutor-rg3" 
 }
 
 resource "azurerm_virtual_network" "my_virtual_network" {
@@ -28,7 +28,9 @@ resource "azurerm_public_ip" "my_public_ip" {
   name = "myPublicIP${count.index}"
   location = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  allocation_method = "Dynamic"    
+  allocation_method = "Static"    
+  sku               = "Standard"
+  sku_tier          = "Regional"
   depends_on = [
     azurerm_resource_group.rg
   ]
@@ -143,19 +145,28 @@ resource "azurerm_linux_virtual_machine" "my_ubuntu_vm" {
     public_key = tls_private_key.my_ssh_key.public_key_openssh
   }
 
-  provisioner "local-exec" {
-     interpreter = ["/bin/bash", "-c"]
-
-     command = <<-EOT
-       sudo apt update -y
-       sudo apt install -y nginx
-     EOT
-  } 
-   
   depends_on = [
     azurerm_resource_group.rg, 
     azurerm_network_interface.my_nic,
     azurerm_network_security_group.my-nsg,
     azurerm_network_interface_security_group_association.nic_ngs_connector
   ]
+}
+
+resource "null_resource" "my-provisioner" {
+  count = 3
+  provisioner "remote-exec" {
+     inline = [
+       "sudo apt update -y",
+       "sudo apt install -y nginx",
+       "sudo apt install -y tmux git tree"
+     ]
+     connection {
+        host = azurerm_public_ip.my_public_ip[count.index].ip_address
+        user = "azureuser"
+        private_key = tls_private_key.my_ssh_key.private_key_openssh 
+        timeout = "10s"
+        agent = false
+    }
+  } 
 }
