@@ -1,13 +1,6 @@
-resource "random_pet" "rg_name" {
-   prefix = var.resource_group_name_prefix
-}
-
 resource "azurerm_resource_group" "rg" {
     location = var.resource_group_location
-    name = random_pet.rg_name.id
-    depends_on = [
-        random_pet.rg_name
-    ]
+    name = "tektutor-rg2" 
 }
 
 resource "azurerm_virtual_network" "my_virtual_network" {
@@ -59,7 +52,7 @@ resource "azurerm_network_security_group" "my-nsg" {
     destination_address_prefix = "*"
   }
   security_rule {
-    name = "AllowHttp"
+    name = "AllowHttp"    
     priority = "1002"
     direction = "Inbound"
     access = "Allow"
@@ -120,19 +113,6 @@ resource "tls_private_key" "my_ssh_key" {
   ]
 }
 
-#Availability Set - Fault Domains [Rack Resilience]
-resource "azurerm_availability_set" "my-avs" {
-  name                         = "my-availability-set"
-  location                     = azurerm_resource_group.rg.location
-  resource_group_name          = azurerm_resource_group.rg.name
-  platform_fault_domain_count  = 3 // 3 Different Racks
-  platform_update_domain_count = 3 // software updates will happen at different times
-  managed                      = true
-  tags = {
-    environment = "Production"
-  }
-}
-
 resource "azurerm_linux_virtual_machine" "my_ubuntu_vm" {
   count = 3
   name = "myUbuntuVM${count.index}"
@@ -140,8 +120,6 @@ resource "azurerm_linux_virtual_machine" "my_ubuntu_vm" {
   resource_group_name = azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.my_nic[count.index].id]
   size = "Standard_DS1_v2"
-  availability_set_id   = azurerm_availability_set.my-avs.id
-
 
   os_disk {
     name = "myHardDisk${count.index}"
@@ -166,9 +144,14 @@ resource "azurerm_linux_virtual_machine" "my_ubuntu_vm" {
   }
 
   provisioner "local-exec" {
-      command = "sudo apt update && sudo apt install -y nginx && sudo systemctl enable nginx && sudo systemctl start nginx"
-      on_failure = continue
-  }
+     interpreter = ["/bin/bash", "-c"]
+
+     command = <<-EOT
+       sudo apt update -y
+       sudo apt install -y nginx
+     EOT
+  } 
+   
   depends_on = [
     azurerm_resource_group.rg, 
     azurerm_network_interface.my_nic,
