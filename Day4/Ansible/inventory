@@ -1,0 +1,5 @@
+[all]
+server1 ansible_user=azureuser ansible_host=20.119.45.107 ansible_private_key_file=../../Day2/azure-multiple-vms/key.pem 
+server2 ansible_user=azureuser ansible_host=20.172.140.19 ansible_private_key_file=../../Day2/azure-multiple-vms/key.pem 
+server3 ansible_user=azureuser ansible_host=20.124.179.161 ansible_private_key_file=../../Day2/azure-multiple-vms/key.pem 
+
