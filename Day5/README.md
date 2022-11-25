@@ -42,7 +42,11 @@ https://github.com/Microsoft/azure-pipelines-agent/releases
 ## Lab - Creating a self-hosted Azure Pipeline agent to run Terraform scripts
 1. Provision an Ubuntu 20.04 Virtual Machine
 2. Install azure cli, terraform cli and ansible
-3. Install the below to configure the VM as a self-hosted Azure Pipline agent
+```
+sudo apt update
+sudo apt install -y git ansible tree vim
+```
+4. Install the below to configure the VM as a self-hosted Azure Pipline agent
 ```
 mkdir myagent && cd myagent
 wget https://vstsagentpackage.azureedge.net/agent/2.213.2/vsts-agent-linux-x64-2.213.2.tar.gz
@@ -75,7 +79,7 @@ Building sources from a TFVC repository requires accepting the Team Explorer Eve
 A copy of the Team Explorer Everywhere license agreement can be found at:
   /home/azureuser/myagent/license.html
 
-Enter (Y/N) Accept the Team Explorer Everywhere license agreement now? (press enter for N) > N
+Enter (Y/N) Accept the Team Explorer Everywhere license agreement now? (press enter for N) > <b>N</b>
 
 >> Connect:
 
