@@ -1,5 +1,14 @@
 # Day 5
 
+## Azure App Service Plan SKU
+<pre>
+Free Tier → F1
+Shared Tier → D1
+Basic Tier → B1, B2, B3 (Basic Small, Medium, Large)
+Standard Tier → S1, S2, S3 (Small, Medium, Large)
+PremiumV2 Tier → P1v2, P2v2, P3v2 (Small, Medium, Large)
+</pre>
+
 ## What is Continuous Integration (CI)?
 - the code you wrote is integrated with dev branch several times a day, which triggers a build and automated test execution
 - this ensures your code commit hasn't broken any existing functions as it runs your newly added test cases and existing test cases
