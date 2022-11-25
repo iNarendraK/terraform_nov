@@ -34,7 +34,7 @@
 - it supports almost any programming language 
 - combines continuous integration (CI) and continuous delivery (CD) to test and build your code and ship it to any target
 
-## Azure Self-hosted agent binaries
+## Azure Self-hosted agent binaries for all supported Operating Systems can be found here
 <pre>
 https://github.com/Microsoft/azure-pipelines-agent/releases
 </pre>
