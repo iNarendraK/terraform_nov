@@ -1,5 +1,214 @@
 # Day 5
 
+## Lab - Deploying a web application using Docker Image into the App Service
+```
+cd ~/terraform-nov-2022
+git pull
+
+cd /Day3/AppService/docker-basic
+terraform init
+terraform apply --auto-approve
+```
+
+Expected output
+<pre>
+(jegan@tektutor.org)$ <b>terraform init</b>
+
+Initializing the backend...
+
+Initializing provider plugins...
+- Reusing previous version of hashicorp/azurerm from the dependency lock file
+- Using previously-installed hashicorp/azurerm v3.33.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+
+(jegan@tektutor.org)$ <b>terraform apply --auto-approve</b>
+var.location
+  The Azure location where all resources in this example should be created
+
+  Enter a value: <b>eastus</b>
+
+var.prefix
+  The prefix used for all resources in this example
+
+  Enter a value: <b>tektutor</b>
+
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the
+following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # azurerm_linux_web_app.example will be created
+  + resource "azurerm_linux_web_app" "example" {
+      + app_settings                      = {
+          + "WEBSITES_ENABLE_APP_SERVICE_STORAGE" = "false"
+        }
+      + client_affinity_enabled           = false
+      + client_certificate_enabled        = false
+      + client_certificate_mode           = "Required"
+      + custom_domain_verification_id     = (sensitive value)
+      + default_hostname                  = (known after apply)
+      + enabled                           = true
+      + https_only                        = false
+      + id                                = (known after apply)
+      + key_vault_reference_identity_id   = (known after apply)
+      + kind                              = (known after apply)
+      + location                          = "eastus"
+      + name                              = "tektutor-example"
+      + outbound_ip_address_list          = (known after apply)
+      + outbound_ip_addresses             = (known after apply)
+      + possible_outbound_ip_address_list = (known after apply)
+      + possible_outbound_ip_addresses    = (known after apply)
+      + resource_group_name               = "tektutor-resources"
+      + service_plan_id                   = (known after apply)
+      + site_credential                   = (known after apply)
+      + zip_deploy_file                   = (known after apply)
+
+      + auth_settings {
+          + additional_login_parameters    = (known after apply)
+          + allowed_external_redirect_urls = (known after apply)
+          + default_provider               = (known after apply)
+          + enabled                        = (known after apply)
+          + issuer                         = (known after apply)
+          + runtime_version                = (known after apply)
+          + token_refresh_extension_hours  = (known after apply)
+          + token_store_enabled            = (known after apply)
+          + unauthenticated_client_action  = (known after apply)
+
+          + active_directory {
+              + allowed_audiences          = (known after apply)
+              + client_id                  = (known after apply)
+              + client_secret              = (sensitive value)
+              + client_secret_setting_name = (known after apply)
+            }
+
+          + facebook {
+              + app_id                  = (known after apply)
+              + app_secret              = (sensitive value)
+              + app_secret_setting_name = (known after apply)
+              + oauth_scopes            = (known after apply)
+            }
+
+          + github {
+              + client_id                  = (known after apply)
+              + client_secret              = (sensitive value)
+              + client_secret_setting_name = (known after apply)
+              + oauth_scopes               = (known after apply)
+            }
+
+          + google {
+              + client_id                  = (known after apply)
+              + client_secret              = (sensitive value)
+              + client_secret_setting_name = (known after apply)
+              + oauth_scopes               = (known after apply)
+            }
+
+          + microsoft {
+              + client_id                  = (known after apply)
+              + client_secret              = (sensitive value)
+              + client_secret_setting_name = (known after apply)
+              + oauth_scopes               = (known after apply)
+            }
+
+          + twitter {
+              + consumer_key                 = (known after apply)
+              + consumer_secret              = (sensitive value)
+              + consumer_secret_setting_name = (known after apply)
+            }
+        }
+
+      + site_config {
+          + always_on                               = true
+          + container_registry_use_managed_identity = false
+          + default_documents                       = (known after apply)
+          + detailed_error_logging_enabled          = (known after apply)
+          + ftps_state                              = "Disabled"
+          + health_check_eviction_time_in_min       = (known after apply)
+          + http2_enabled                           = false
+          + ip_restriction                          = (known after apply)
+          + linux_fx_version                        = (known after apply)
+          + load_balancing_mode                     = "LeastRequests"
+          + local_mysql_enabled                     = false
+          + managed_pipeline_mode                   = "Integrated"
+          + minimum_tls_version                     = "1.2"
+          + remote_debugging_enabled                = false
+          + remote_debugging_version                = (known after apply)
+          + scm_ip_restriction                      = (known after apply)
+          + scm_minimum_tls_version                 = "1.2"
+          + scm_type                                = (known after apply)
+          + scm_use_main_ip_restriction             = false
+          + use_32_bit_worker                       = true
+          + vnet_route_all_enabled                  = false
+          + websockets_enabled                      = false
+          + worker_count                            = (known after apply)
+
+          + application_stack {
+              + docker_image     = "jackofallops/azure-containerapps-python-acctest"
+              + docker_image_tag = "v0.0.1"
+            }
+        }
+    }
+
+  # azurerm_resource_group.example will be created
+  + resource "azurerm_resource_group" "example" {
+      + id       = (known after apply)
+      + location = "eastus"
+      + name     = "tektutor-resources"
+    }
+
+  # azurerm_service_plan.example will be created
+  + resource "azurerm_service_plan" "example" {
+      + id                           = (known after apply)
+      + kind                         = (known after apply)
+      + location                     = "eastus"
+      + maximum_elastic_worker_count = (known after apply)
+      + name                         = "tektutor-sp-zipdeploy"
+      + os_type                      = "Linux"
+      + per_site_scaling_enabled     = false
+      + reserved                     = (known after apply)
+      + resource_group_name          = "tektutor-resources"
+      + sku_name                     = "S1"
+      + worker_count                 = (known after apply)
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + app_url            = (known after apply)
+  + linux_web_app_name = "tektutor-example"
+azurerm_resource_group.example: Creating...
+azurerm_resource_group.example: Still creating... [10s elapsed]
+azurerm_resource_group.example: Still creating... [20s elapsed]
+azurerm_resource_group.example: Still creating... [30s elapsed]
+azurerm_resource_group.example: Still creating... [40s elapsed]
+azurerm_resource_group.example: Creation complete after 45s [id=/subscriptions/6ee542a8-0314-472f-a628-625cfbfcc778/resourceGroups/tektutor-resources]
+azurerm_service_plan.example: Creating...
+azurerm_service_plan.example: Still creating... [10s elapsed]
+azurerm_service_plan.example: Creation complete after 13s [id=/subscriptions/6ee542a8-0314-472f-a628-625cfbfcc778/resourceGroups/tektutor-resources/providers/Microsoft.Web/serverfarms/tektutor-sp-zipdeploy]
+azurerm_linux_web_app.example: Creating...
+azurerm_linux_web_app.example: Still creating... [10s elapsed]
+azurerm_linux_web_app.example: Still creating... [20s elapsed]
+azurerm_linux_web_app.example: Still creating... [30s elapsed]
+azurerm_linux_web_app.example: Still creating... [40s elapsed]
+azurerm_linux_web_app.example: Creation complete after 46s [id=/subscriptions/6ee542a8-0314-472f-a628-625cfbfcc778/resourceGroups/tektutor-resources/providers/Microsoft.Web/sites/tektutor-example]
+
+Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+app_url = "https://tektutor-example.azurewebsites.net"
+</pre>
+
 ## Azure App Service Plan SKU
 <pre>
 Free Tier → F1
