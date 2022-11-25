@@ -51,17 +51,23 @@ You will see below page now, click on "My Azure DevOps Organizations"
 
 Click on "Create new organization"
 
-Once you have created your new organization, create a Personal Access Token and save the token in your system in some text file.  This token will be required to register your self-hosted pipeline agent with your project.
+Once you have created your new organization, create a Personal Access Token with Full access and save the token in your system in some text file.  This token will be required to register your self-hosted pipeline agent with your project.
 ![Azure DevOps Organizations](azure3.png)
 
-
-1. Provision an Ubuntu 20.04 Virtual Machine
+1. Provision an Ubuntu 20.04 Virtual Machine in your azure portal.
 2. Install azure cli, terraform cli and ansible
 ```
 sudo apt update
 sudo apt install -y git ansible tree vim
 ```
-4. Install the below to configure the VM as a self-hosted Azure Pipline agent
+3. From the terminal, type the below command, copy the code and paste the code on the web page that popped up and login to your azure portal to authenticate.
+```
+az login
+```
+Copy the credentials details in some file for your future reference.
+
+
+4. Install the below from terminal to configure the Azure Ubuntu VM as a self-hosted Azure Pipline agent
 ```
 mkdir myagent && cd myagent
 wget https://vstsagentpackage.azureedge.net/agent/2.213.2/vsts-agent-linux-x64-2.213.2.tar.gz
