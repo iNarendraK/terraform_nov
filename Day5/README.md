@@ -40,6 +40,21 @@ https://github.com/Microsoft/azure-pipelines-agent/releases
 </pre>
 
 ## Lab - Creating a self-hosted Azure Pipeline agent to run Terraform scripts
+
+#### Create a Personal Access Token
+From your Azure portal, search for "Azure DevOps organizations", which will take you to below page
+![Azure DevOps Organizations](azure1.png)
+
+Click on "My Azure DevOps Organizations", which will take you to below page
+![Azure DevOps Organizations](azure2.png)
+
+
+Click on "Create new organization"
+
+Once you have created your new organization, create a Personal Access Token and save the token in your system in some text file.  This token will be required to register your self-hosted pipeline agent with your project.
+![Azure DevOps Organizations](azure3.png)
+
+
 1. Provision an Ubuntu 20.04 Virtual Machine
 2. Install azure cli, terraform cli and ansible
 ```
