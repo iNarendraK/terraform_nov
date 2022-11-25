@@ -45,7 +45,7 @@ https://github.com/Microsoft/azure-pipelines-agent/releases
 From your Azure portal, search for "Azure DevOps organizations" and click the same
 ![Azure DevOps Organizations](azure1.png)
 
-Click on "My Azure DevOps Organizations", which will take you to below page
+You will see below page now
 ![Azure DevOps Organizations](azure2.png)
 
 
