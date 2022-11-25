@@ -42,7 +42,7 @@ https://github.com/Microsoft/azure-pipelines-agent/releases
 ## Lab - Creating a self-hosted Azure Pipeline agent to run Terraform scripts
 
 #### Create a Personal Access Token
-From your Azure portal, search for "Azure DevOps organizations", which will take you to below page
+From your Azure portal, search for "Azure DevOps organizations" and click the same
 ![Azure DevOps Organizations](azure1.png)
 
 Click on "My Azure DevOps Organizations", which will take you to below page
